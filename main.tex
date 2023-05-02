@@ -29,33 +29,19 @@
 \usepackage{bm} % Bold math symbols
 \usepackage{pbox} % For fitting big things into tables
 \usepackage{pdflscape} % Comment out if no landscape pages
-\usepackage{algorithmic} % Comment out if no algs
-\usepackage{algorithm} % Comment out if no algs
-
-% Algorithm stuff
-\newcommand{\algorithmautorefname}{Algorithm}
-\renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand{\algorithmicensure}{\textbf{Output:}}
-\renewcommand{\algorithmicforall}{\textbf{for each}}
 
 
 \newcommand{\ttt}[1]{\texttt{#1}}
 \newcommand{\blue}[1]{{\color{blue}#1}}
-\newcommand{\thesistitleI}{Thesis Title Line One}
-\newcommand{\thesistitleII}{Optional Second Line}
-\newcommand{\myname}{Adam Shen}
+\newcommand{\thesistitleI}{Using detectability and data integration techniques to improve trend estimates of North American landbirds}
+\newcommand{\thesistitleII}{}
+\newcommand{\myname}{Brandon Patrick Murray Edwards}
 
 
 % Compile specified chapters only
 %\includeonly{ch0-frontmatter,ch1-introduction}
 
 \begin{document}
-
-% To get list of algorithms into the TOC - from `algorithms` documentation
-\renewcommand{\listofalgorithms}{\begingroup
-	\tocfile{List of Algorithms}{loa}
-\endgroup}
 
 \makeatletter
 \let\l@algorithm\l@figure
