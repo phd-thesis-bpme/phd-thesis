@@ -30,6 +30,17 @@
 \usepackage{pbox} % For fitting big things into tables
 \usepackage{pdflscape} % Comment out if no landscape pages
 
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\renewcommand{\dbltopfraction}{.66}
+\renewcommand{\dblfloatpagefraction}{.66}
+\setcounter{topnumber}{9}
+\setcounter{bottomnumber}{9}
+\setcounter{totalnumber}{20}
+\setcounter{dbltopnumber}{9}
+
 
 \newcommand{\ttt}[1]{\texttt{#1}}
 \newcommand{\blue}[1]{{\color{blue}#1}}
@@ -57,10 +68,10 @@
 \pagenumbering{arabic}
 
 \input{../ch1-introduction/introduction}
-\input{../ch2-literature-review/article}
+%\input{../ch2-literature-review/article}
 \input{../ch3-napops/article/data-chapter-1}
 \input{../ch4-multispecies-detectability/article/article}
-\input{../ch5-bbs-detectability/article/article}
+%\input{../ch5-bbs-detectability/article/article}
 %\input{../ch6-aru-perspective/article/article}
 %\input{../ch7-conclusion/conclusion}
 
