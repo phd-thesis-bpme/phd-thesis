@@ -32,15 +32,53 @@
 
 \addcontentsline{toc}{chapter}{Abstract}
 
-\lipsum[1]
-
-
+\par In biological surveys, detectability refers to our (the observers) ability to detect an organism, and is typically expressed as a probability of detection. 
+Often, detectability is ignored in conservation problems that draw from biological surveys, because the survey lacks ancillary information to estimate detectability, or detectability is simply unknown for a particular species.
+This can be problematic in instances where conservation managers may want to trade off monitoring versus action for a particular species, because it is impossible to know if zeros in a biological survey are true zeros because the species was not present, or a false zero because the species was there but not detected.
+In estimates of population sizes, detectability is used to scale observed abundance of an organism to true abundance or density.
+North American birds have been studied and survey extensively; as such, there is a plethora of point count data that are available across several programs.
+Because of this, we are in an excellent position to estimate detectability of many landbird species using data-driven approaches, such that these detectability estimates may be used for future conservation purposes.
+In this thesis, I focus on this data-driven estimation of detection probabilities for over 300 species of North American landbirds, by making use of the millions of data points available throughout North America.
+In Chapter 2, I lay out an overview of how the detection process works in birds, and how to model detectability.
+In Chapter 3, I then provide a pipeline for data-driven detectability estimates, by using methodology developed by the Boreal Avian Modelling project.
+This allowed for detection probabilities to be estimated for 338 species of North American landbirds.
+I expand upon these species in Chapter 4 by demonstrating how the use of Bayesian hierarchical modelling can help ``fill in the gaps" for detection probabilties for data-sparse species.
+In Chapter 5, I apply these detection probabilites to the North American Breeding Bird Survey, a long-running bird survey that has not previously been able to account for detectability in their trend analysis.
+I show that by accounting for changes in detectability due to changes in the landscape at the local scale, trends can change dramatically from near-flat to highly decreasing.
+Finally, in Chapter 6, I take a look at the some of the implications for conservation that the availability of detectability estimates can have, which include implications for data integration.
 
 \chapter*{Acknowledgements}
 
 \addcontentsline{toc}{chapter}{Acknowledgements}
 
-\lipsum[2]
+\par I've got a lot of thanks for you people, and now, you're gonna hear about it! 
+To say that this entire thesis is a product of all the wonderful people supporting me, both now and in the past, would be a huge understatement.
+
+\par I want to first start by thanking my undergraduate mentors, Dr Daniel Gillis and Dr Shoshanah Jacobs.
+Dan, you took such a huge risk on me when I waltzed into your office as an eager first-year computer science student in my second semester, and hired me on as an undergraduate research assistant.
+Not only did you let me help out with your students' projects, but you gave me the opportunity to build my own projects based on my interest in birds, and you let me experience the life of an academic before even getting into grad school.
+Sho, thank you for all of your biological wisdom in helping getting that piping plover project away from a super nerdy computer science exercise to an actual biologically-relevant project. 
+Both of you have had a profound effect on my career as a researcher, and I will be forever grateful for all the opportunities you allowed for me.
+
+\par An absolutely huge thank you to my PhD supervisors Dr Joseph Bennett and Dr Adam Smith.
+Adam, I appreciate you giving me the opportunity to do an co-op position with you during my undergraduate, which ended up turning in to a super cool opportunity to work with Breeding Bird Survey data and all the groups that are interested in bird monitoring.
+Thank you so much for all your statistical wizardry over the years; I always appreciated our meetings that mostly involved staring at Stan code until the "ah-ha" moments.
+Joe, thank you for also taking the chance on co-supervising me, fresh out of an undergraduate degree in math and stats with the desire to do a PhD in biology.
+You have allowed me the opportunity to truly develop a transdisciplinary skill set as a statistical ecologist in the world of conservation science.
+I feel like I have learned more about the state of conservation from you than I ever will in my lifetime.
+To both of you, thank you for giving me the freedom to work at my own pace, and for having the wherewithal to reign me in when I go off the tracks.
+
+\par This thesis has been supported by a plethora of people from quite literally around the world. 
+Thank you to my thesis committee members Dr Lenore Fahrig and Dr Heather Kharouba (University of Ottawa).
+I always have appreciated having your perspectives during my committee meetings, and you have encouraged me always to think beyond the model outputs in my work.
+Thank you to Dr Elly Knight, Dr Erin Bayne, Dr Diana Stralberg, and the many other wonderful scientists at the Boreal Avian Modelling project for allowing me to develop a project to bring to Edmonton for a research visit.
+I had such a great time visiting you all, and it was a great experience to work with the people that came up with many of the methods I used here.
+Thank you to Dr David Miller (Biomathematics and Statistics Scotland) and Dr Alison Johnston (University of St. Andrews) for also allowing me to develop a project to bring to St Andrews for a research visit.
+Never in my wildest dreams did I think I would have a chance to visit such a cool area in the world as St Andrews, let alone work with some brilliant people at CREEM.
+I really do miss the cake culture at CREEM, and that's something I will plan to bring to my future workplace.
+Thank you to the entirety of the Partners in Flight Population Estimates subcommittee.
+
+
 
 \chapter*{Thesis Format and Co-authorship}
 
