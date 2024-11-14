@@ -32,20 +32,20 @@
 
 \addcontentsline{toc}{chapter}{Abstract}
 
-\par In biological surveys, detectability refers to the observer's ability to detect an organism, and is typically expressed as a probability of detection. 
-Often, detectability is ignored in conservation problems that draw from biological surveys, because the survey lacks ancillary information to estimate detectability, or detectability is simply unknown for a particular species.
-This can be problematic in instances where conservation managers may want to trade off monitoring versus action for a particular species, because it is impossible to know if zeros in a biological survey are true zeros because the species was not present, or a false zero because the species was there but not detected.
-In estimates of population sizes, detectability is used to scale observed abundance of an organism to true abundance or density.
-\par North American birds have been studied and surveyed extensively; as such, there is a plethora of point count data that are available across several programs.
-Because of this, we are in an excellent position to estimate detectability of many landbird species using data-driven approaches, such that these detectability estimates may be used for future conservation purposes.
-In this thesis, I focus on this data-driven estimation of detection probabilities for over 300 species of North American landbirds, by making use of the millions of data points available throughout North America.
-In Chapter 2, I lay out an overview of how the detection process works in birds, and how to model detectability.
-In Chapter 3, I then provide a pipeline for data-driven detectability estimates, by using methodology developed by the Boreal Avian Modelling project.
-This allowed for detection probabilities to be estimated for 338 species of North American landbirds.
-I expand upon these species in Chapter 4 by demonstrating how the use of Bayesian hierarchical modelling can help ``fill in the gaps" for detection probabilities for data-sparse species.
-In Chapter 5, I apply these detection probabilities to the North American Breeding Bird Survey, a long-running bird survey that has not previously been able to account for detectability in their trend analysis.
-I show that by accounting for changes in detectability due to changes in the landscape at the local scale, trends can change dramatically from near-flat to highly decreasing.
-Finally, in Chapter 6, I examine the implications for conservation that the availability of detectability estimates can have, which include implications for data integration.
+\par In biological surveys, detectability refers to the observer's ability to detect an organism, and is typically expressed as a probability. Often, detectability is ignored in conservation problems that draw from biological surveys, because the survey lacks ancillary information to estimate detectability, or detectability is simply unknown for a particular species. This can be problematic in instances where conservation managers may want to trade off monitoring versus action for a particular species, because it is impossible to know if zeros in a biological survey are true zeros because the species was not present, or a false zero because the species was there but not detected. 
+
+\par North American birds have been studied and surveyed extensively; as such, there is a plethora of point count data that are available across several programs. Because of this, we are in an excellent position to estimate detectability of many landbird species using data-driven approaches, such that these detectability estimates may be used for future conservation purposes. In this thesis, I focus on this data-driven estimation of detection probabilities for over 300 species of North American landbirds. In Chapter 2, I provide an overview of how the detection process works in birds, and how to model detectability. In Chapter 3, I then provide a pipeline for data-driven detectability estimates, by using methodology developed by the Boreal Avian Modelling project. This allowed for detection probabilities to be estimated for 338 species of landbirds. I expand upon these species in Chapter 4 by demonstrating how the use of Bayesian hierarchical modelling can help ``fill in the gaps" for detection probabilities for data-sparse species. In Chapter 5, I apply these detection probabilities to the North American Breeding Bird Survey, a long-running bird survey that has not previously been able to account for detectability in their trend analysis. I show that by accounting for changes in detectability due to changes in the landscape at the local scale, trends can change dramatically from near-flat to highly decreasing. Finally, in Chapter 6, I examine the implications for conservation that the availability of detectability estimates can have, which include implications for data integration.
+
+\chapter*{Dedication}
+
+\par For the birds: the ones we have lost, the ones we have with us today, and the ones yet to be discovered.
+
+
+\begin{center}
+	\centering \textit{``These migratory birds will inspire me and fill me with wonder for as long as I live. They practice no religion, but they are buoyed up and carried along on their journeys by what seem to be infinite levels of faith. They live the briefest of lives, but they are bound to eternal things. They are out there now between the heavens and the earth, legions of travelers flowing strong and deep through the night, beyond all understanding, beyond all imagination, filling the sky with life."}
+	
+	-Kenn Kaufman, A Season on the Wind
+\end{center}
 
 \chapter*{Acknowledgements}
 
@@ -62,14 +62,14 @@ Both of you have had a profound effect on my career as a researcher, and I will 
 
 \par An absolutely huge thank you to my PhD supervisors Dr Joseph Bennett and Dr Adam Smith.
 Adam, I appreciate you giving me the opportunity to do an co-op position with you during my undergraduate, which ended up turning into a super cool opportunity to work with Breeding Bird Survey data and all the groups that are interested in bird monitoring.
-Thank you so much for all your statistical wizardry over the years; I always appreciated our meetings that mostly involved staring at Stan code until the "ah-ha" moments.
+Thank you so much for all your statistical wizardry over the years; I always appreciated our meetings that mostly involved staring at Stan code until the ``ah-ha" moments.
 Joe, thank you for also taking the chance on co-supervising me, fresh out of an undergraduate degree in math and stats with the desire to do a PhD in biology.
 You have allowed me the opportunity to truly develop a transdisciplinary skill set as a statistical ecologist in the world of conservation science.
 I feel like I have learned more about the state of conservation from you than I ever will in my lifetime.
 To both of you, thank you for giving me the freedom to work at my own pace, and for having the wherewithal to reign me in when I go off the tracks.
 
 \par This thesis has been supported by a plethora of people from quite literally around the world. 
-Thank you to my thesis committee members Dr Lenore Fahrig and Dr Heather Kharouba (University of Ottawa).
+Thank you to my thesis committee members Dr Lenore Fahrig (Carleton University) and Dr Heather Kharouba (University of Ottawa).
 I always have appreciated having your perspectives during my committee meetings, and you have encouraged me always to think beyond the model outputs in my work.
 Thank you to Dr Elly Knight, Dr Erin Bayne, Dr Diana Stralberg, and the many other wonderful scientists at the Boreal Avian Modelling project for allowing me to develop a project to bring to Edmonton for a research visit.
 I had such a great time visiting you all, and it was a great experience to work with the people that came up with many of the methods I used here.
@@ -78,8 +78,27 @@ Never in my wildest dreams did I think I would have a chance to visit such a coo
 I really do miss the cake culture at CREEM, and that's something I will plan to bring to my future workplace.
 Thank you to the entirety of the Partners in Flight Population Estimates subcommittee.
 It has been an absolute privilege to work with all of you over the last 4 and a half years, and I have learned so much.
+Thank you to all co-authors that have been a part of my papers throughout my thesis.
+It has been such a fun time to be able to publish with all of you, and I look forward to future collaborations.
 
-\par Friends and family
+\par To my friends and family, you have been such a huge support over the last 4 and a half years.
+Thank you to my parents for all of your support over the years.
+I realize it was probably strange to hear that I wanted to do even more school after I finished school, and then even more school after that school.
+I appreciate your support no matter how bizarre my choices may be!
+I promise I'm actually done with school now.
+To all my friends, thank you for all of the laughs, cries, arguments, etc over the years.
+Particular thanks to Jenny Andrews, Eric Heisey, Gabriel Evans-Cook, Isabelle Summers, Sean Jenniskens, Emma Hudgins, Willow English, Sam Snow, and Lily Zeng for all of our various COVID social bubbles.
+I likely would have gone mad without your phone calls, visits, trips, etc.
+Thank you to all GLEL members, past and present, for making the lab environment such an amazing place!
+I don't know how it was possible to concentrate such amazing people into this lab, but here we are.
+The camping trips, trivia, star making, holiday lunches, and (perhaps most importantly?) Friday beers were always something I looked forward to, and the camaraderie made the stressful PhD feel like a breeze.
+Thank you to the workers and owners of New King Shawarma Plus on Bank and Nepean St in Ottawa.
+Your shawarma brought life to my bleak, mid-pandemic, early Ottawa days.
+
+\par Last, but certainly not least, thank you so much to Allison Binley for everything.
+You were there for me throughout my PhD, both on the science side (getting me out of the cold-potato mathematics) and on the personal side.
+I could not have imagined getting through my PhD without your love and support.
+Thank you from the bottom of my heart.
 
 
 
@@ -92,21 +111,27 @@ Much of the research in this thesis, however, was conducted as part of various c
 As such, all chapters are my own original work supported by co-authors as listed below.
 I conducted all conceptualization, data processing, data analysis, and writing, with feedback on writing by co-authors.
 
-\par I have strived to make this thesis adhere to the principle of open, reliable, reproducible, and transparent research.
-As such, I have made all chapters of this thesis, and the code for the thesis itself, available as an Organization of repositories on Github (see https://github.com/phd-thesis-bpme).
+\par I have pushed to make this thesis adhere to the principle of open, reliable, reproducible, and transparent research.
+As such, I have made all chapters of this thesis, and the code for the thesis itself, available as GitHub Organization (see https://github.com/phd-thesis-bpme).
 Each of the data chapters below will have been contained in their own repository prior to being compiled into this thesis.
 As such, I have ``forked" these existing repositories into the thesis organization previously linked, and have made necessary modifications to the code specific to this thesis.
 These repositories will be archived upon final thesis submission, and this sentence will be replaced with a final DOI of all archived code for this thesis.
 
-\par Chapters 1, 2, and parts of 6 are sections for a manuscript being prepared for peer-review at Ornithological Applications for a special feature entitled "Importance of detectability and recent advances in estimation".
+\par Chapters 1, 2, and parts of 6 are sections for a manuscript being prepared for peer-review at Ornithological Applications for a special feature entitled ``Importance of detectability and recent advances in estimation".
+
+Edwards BPM, Bennett J, Smith AC. In defense of detectability: Importance of detectability and recent advances in estimation. In preparation for submission to Ornithological Applications.
 
 \par Chapter 3 has been published in a peer-reviewed journal:
+
 Edwards BPM, Smith AC, Docherty TGS, Gahbauer MA, Gillespie CR, Grinde AR, Harmer T, Iles DT, Matsuoka SM, Michel NL, Murray A, Niemi GJ, Pasher J, Pavlacky Jr DC, Robinson BG, Ryder TB, Sólymos P, Stralberg D, Zlonis EJ. (2023). Point Count Offsets for Estimating Population Sizes of North American Landbirds. Ibis 165(2):482-503. https://doi.org/10.1111/ibi.13169
 
-\par Chapter 4 is under review at Ornithogical Applications for a special feature entitled "Importance of detectability and recent advances in estimation":
+\par Chapter 4 is under review at Ornithogical Applications for a special feature entitled ``Importance of detectability and recent advances in estimation":
+
 Edwards BPM, Gahbauer MA, Grinde A, Hope DD, Knight EC, Michel NL, Robinson BG, Sólymos P, Bennett JR, Smith AC. Predicting detection probabilities for rare and undersampled North American landbirds. Submitted to Ornithological Applications. [Under 1st revision, ORNITH-APP-24-159]
 
-\par Chapter 5 is in being prepared for peer-review at Ecological Monographs.
+\par Chapter 5 is in being prepared for peer-review at Ecological Monographs:
+
+Edwards BPM, Johnston A, Miller D, Bennett J, Smith AC. A point-level trend model for the North American Breeding Bird Survey that corrects for detectability. In preparation for submission to Ecological Monographs.
 
 \par All abstracts, published or otherwise, are contained in Chapter 1 under the ``Research Approach" subsection.
 
